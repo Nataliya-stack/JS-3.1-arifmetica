@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <title>JS - 3.1</title>
+     <style type="text/tailwindcss">
+      @import "tailwindcss";   
+      @layer base {
+        p, h1, h2, h3 {
+          @apply mb-2 leading-relaxed text-gray-700
+        }
+        h1, h2, h3 {
+          @apply mt-2 font-bold text-slate-500
+        }
+        input {
+          @apply rounded-sm border-1 border-slate-300 text-slate-800 font-mono bg-white
+        }
+        input, label {
+          @apply pl-4
+        }
+        button {
+          @apply rounded-md shadow-xs border-2 border-slate-400 px-4 py-1 my-1 cursor-pointer active:scale-95 transition-transform
+        }
+        details {
+          @apply mb-4 pb-4 border-b-slate-700 border-b-1
+        }
+        summary {
+          @apply bg-slate-700 text-white font-bold
+        }
+        code {
+          @apply text-blue-800 bg-gray-100/80 px-1 rounded-xs
+        }
+        ul {
+          list-style-type: circle;
+          @apply ml-4 text-gray-700
+        }
+
+        body {
+          background-image: linear-gradient(to bottom, #f0f2f0 0%, #000c40 100%);
+        }
+      }      
+    </style>
+</head>
+<body class="container w-full max-w-5xl mx-auto p-4 sm:p-6 min-h-screen flex flex-col justify-start">
+  
+    <div class="w-full bg-white/90 p-6 md:p-8 rounded-xl shadow-xl backdrop-blur-md my-4">
+        
+        <h1 class="font-extrabold text-2xl text-slate-800">Ejercicios Entrada y Salida de Datos / Aritmética</h1>
+        <p class="text-gray-500 text-sm">( Cada ejercicio será una página web diferente. Subir a GitHub )</p>
+        <p class="bg-slate-700 text-white font-bold text-xl px-4 py-1 rounded-xs mt-4">Ejercicio 1</p>
+        <p class="mt-2">Haz un programa que le pregunte dos números enteros al usuario mediante un formulario. (Para convertir a entero usa la función <code>parseInt</code>). Al presionar el botón <code>Aritmética</code>, el programa imprimirá por pantalla los mensagens siguientes (Crear los párrafos pertinentes con su <code>id</code> ):</p>
+        <ul class="mb-4 space-y-1">
+           <li>La suma de <code>a</code> + <code>b</code> es <code>valor</code></li>
+           <li>La resta de <code>a</code> + <code>b</code> es <code>valor</code></li>
+           <li>La multiplicación de <code>a</code> + <code>b</code> es <code>valor</code></li>
+           <li>La división de <code>a</code> + <code>b</code> es <code>valor</code></li>
+        </ul>
+        <hr class="border-slate-200 my-4">
+        <h2 class="text-xl text-slate-800 mb-4">Formulario</h2>
+        
+        <div class="w-full max-w-3xl space-y-4">
+            <p class="flex flex-col sm:flex-row sm:items-center gap-2">
+                <label class="w-full sm:w-1/2 pr-2 text-gray-700 font-medium" for="num1">Escribe un número entero</label>
+                <input class="w-full sm:w-1/2 h-10 border border-slate-300" type="number" id="num1">
+            </p>
+            <p class="flex flex-col sm:flex-row sm:items-center gap-2">
+                <label class="w-full sm:w-1/2 pr-2 text-gray-700 font-medium" for="num2">Escribe otro número entero</label>
+                <input class="w-full sm:w-1/2 h-10 border border-slate-300" type="number" id="num2">
+            </p>
+            <p class="flex flex-col sm:flex-row sm:items-center gap-2">
+                <label class="w-full sm:w-1/2 pr-2 text-gray-700 font-medium" for="num3">Escribe tercero número entero</label>
+                <input class="w-full sm:w-1/2 h-10 border border-slate-300" type="number" id="num3">
+            </p>
+            <p class="pt-2">
+                <button onclick="calculate()" class="w-full sm:w-auto bg-slate-800 text-white border-none hover:bg-slate-700 font-bold px-6 py-2 rounded-md transition-colors">Aritmetica</button>
+            </p>
+        </div>     
+      
+        <div class="mt-6 space-y-2 border-t border-slate-100 pt-4">
+            <p class="result font-bold text-xl text-slate-900" id="sum"></p>
+            <p class="result font-bold text-xl text-slate-900" id="diff"></p>
+            <p class="result font-bold text-xl text-slate-900" id="prod"></p>
+            <p class="result font-bold text-xl text-slate-900" id="quot"></p>
+        </div>
+
+    </div>
+   
+    <script src="./js/app.js"></script>
+</body>
+</html>
